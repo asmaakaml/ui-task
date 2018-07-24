@@ -1,0 +1,61 @@
+<div class="dash">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
+      <div class="side">
+        <app-navigation-dashboard></app-navigation-dashboard>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-9 col-xl-9 ">
+      <div class="navigation">
+          <div class="example-wrapper">
+            <button kendoButton *ngIf="!opened1" (click)="open1()">Open window</button>
+            <p *ngIf="dataSaved">Data has been saved</p>
+            <kendo-window title=" to do list" [(top)]="windowTop1" [(left)]="windowLeft1" *ngIf="opened1" (close)="close1()" [minWidth]="200"
+              [width]="300" [minHeight]="200">
+              <ul>
+                  <li>sales</li>
+                  <li>engineer</li>
+                  <li>development</li>
+                  <li>Finance</li>
+              </ul>
+            </kendo-window>
+          </div>
+          <div class="example-wrapper">
+            <button kendoButton *ngIf="!opened2" (click)="open2()">Open window</button>
+            <p *ngIf="dataSaved">Data has been saved</p>
+            <kendo-window title="latest news" [(top)]="windowTop2" [(left)]="windowLeft2" *ngIf="opened2" (close)="close2()" [minWidth]="200"
+              [width]="300" [minHeight]="200">
+              <li>sales</li>
+                  <li>engineer</li>
+                  <li>development</li>
+                  <li>Finance</li>
+            </kendo-window>
+          </div>
+          <div class="example-wrapper">
+            <button kendoButton *ngIf="!opened3" (click)="open3()">Open window</button>
+            <p *ngIf="dataSaved">Data has been saved</p>
+            <kendo-window title="tasks" [(top)]="windowTop3" [(left)]="windowLeft3" *ngIf="opened3" (close)="close3()" [minWidth]="200"
+              [width]="300" [minHeight]="200">
+              <ul>
+                  <li>task1-sales</li>
+                  <li>task2-engineer</li>
+                  <li>task3-development</li>
+                  <li>task4-Finance</li>
+                </ul>
+            </kendo-window>
+          </div>
+          <div class="example-wrapper">
+            <button kendoButton *ngIf="!opened4" (click)="open4()">Open window</button>
+            <p *ngIf="dataSaved">Data has been saved</p>
+            <kendo-window title="tasks" [(top)]="windowTop4" [(left)]="windowLeft4" *ngIf="opened4" (close)="close4()" [minWidth]="200"
+              [width]="300" [minHeight]="200">
+              <li>task1-sales</li>
+              <li>task2-engineer</li>
+              <li>task3-development</li>
+              <li>task4-Finance</li>
+            </kendo-window>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

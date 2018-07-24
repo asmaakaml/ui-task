@@ -1,0 +1,139 @@
+<div class="dash">
+    <div class="row">
+        <div class="col-3">
+            <div class="side">
+                <app-navigation-dashboard></app-navigation-dashboard>
+            </div>
+        </div>
+        <div class="col-9">
+            <!-- Nav pills -->
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="pill" href="#home">Add Employee</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#menu1">Search Employee</a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane container active" id="home">
+                    <div class="navigation">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-10 ">
+                                <div class="card">
+                                    <div class="card-block">
+                                        <form class="k-form" (ngSubmit)="registerUser()" #registerForm="ngForm">
+                                            <fieldset>
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <label class="k-form-field">
+                                                            <span>Employee Name
+                                                                <span class="k-required">*</span>
+                                                            </span>
+                                                            <div class="validation-wrapper">
+                                                                <input class="k-textbox" placeholder="Your Name" name="fname" ngModel #fullname="ngModel" required />
+                                                                <i *ngIf="fullname.valid && fullname.dirty" class="fa fa-check-circle"></i>
+                                                            </div>
+                                                            <div class="validationError" *ngIf="!fullname.valid &&fullname.touched">
+                                                                please enter your name
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label class="k-form-field">
+                                                            <span>Department
+                                                                <span class="k-required">*</span>
+                                                            </span>
+                                                            <div class="validation-wrapper">
+                                                                <kendo-combobox [data]="listItems" [allowCustom]="allowCustom" name="department" ngModel #department="ngModel" required>
+                                                                </kendo-combobox>
+                                                                <i *ngIf="department.valid && department.dirty" class="fa fa-check-circle"></i>
+                                                            </div>
+                                                            <div class="validationError" *ngIf="!department.valid &&department.touched">
+                                                                please select your department
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <label class="k-form-field">
+                                                            <span>Employee code
+                                                                <span class="k-required">*</span>
+                                                            </span>
+                                                            <div class="validation-wrapper">
+                                                                <kendo-numerictextbox type="number" [min]="0" k-text [spinners]="false" name="code" ngModel #code="ngModel" required>
+                                                                </kendo-numerictextbox>
+                                                                <i *ngIf="code.valid && code.dirty" class="fa fa-check-circle"></i>
+                                                            </div>
+                                                            <div class="validationError" *ngIf="!code.valid &&code.touched">
+                                                                please enter your code
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label class="k-form-field">
+                                                            <span>Birthday
+                                                                <span class="k-required">*</span>
+                                                            </span>
+                                                            <div class="validation-wrapper">
+                                                                <kendo-datepicker [(value)]="value" name="birthday" ngModel #birthday="ngModel" required></kendo-datepicker>
+                                                                <i *ngIf="birthday.valid && birthday.dirty" class="fa fa-check-circle"></i>
+                                                            </div>
+                                                            <div class="validationError" *ngIf="!birthday.valid &&birthday.touched">
+                                                                please select your birthday
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="k-form-field">
+                                                    <span>Gender</span>
+                                                    <input type="radio" name="gender" id="female" class="k-radio" value="female" ngModel>
+                                                    <label class="k-radio-label" for="female">Female</label>
+                                                    <input type="radio" name="gender" id="male" class="k-radio" checked="checked" value="male" ngModel>
+                                                    <label class="k-radio-label" for="male">Male</label>
+                                                </div>
+                                            </fieldset>
+                                            <div class="text-right">
+                                                <input type="submit" value="Add" class="k-button k-primary add" [disabled]="!registerForm.valid">
+                                                <div class="suc" *ngIf="suc">
+                                                    <p>successfullyAdded</p>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="tab-pane container fade" id="menu1">
+                    <kendo-grid [data]="gridData" [pageSize]="state.take" [skip]="state.skip" [sort]="state.sort" [filter]="state.filter" [sortable]="true"
+                        [pageable]="true" [filterable]="true" [selectable]="selectableSettings" (dataStateChange)="dataStateChange($event)"
+                        [height]="410">
+                        <kendo-grid-checkbox-column showSelectAll="true" width="50"></kendo-grid-checkbox-column>
+                        <kendo-grid-column field="code" class="caplitalized" title="Code" width="70" [filterable]="false">
+                        </kendo-grid-column>
+                        <kendo-grid-column field="fname" title="Name" width="160">
+                        </kendo-grid-column>
+                        <kendo-grid-column field="department" title="Department" width="180">
+                            <ng-template kendoGridFilterCellTemplate let-filter>
+                                <my-dropdown-filter [filter]="filter" [data]="listitems" textField="department" valueField="">
+
+                                </my-dropdown-filter>
+                            </ng-template>
+                        </kendo-grid-column>
+                        <kendo-grid-column field="birthday" title="Birth Date" width="220" [filterable]="false">
+                        </kendo-grid-column>
+                        <kendo-grid-column field="gender" title="Gender" width="90" [filterable]="false">
+                        </kendo-grid-column>
+                    </kendo-grid>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

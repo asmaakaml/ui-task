@@ -1,0 +1,43 @@
+<!-- start login  -->
+<div class="login">
+  <div class="login-form">
+    <div class="row example-wrapper">
+      <div class="col-xs-12 col-sm-6 offset-sm-3 example-col">
+        <div class="card">
+          <div class="card-block">
+            <!-- start login form -->
+            <form class="k-form" (ngSubmit)="loginUser()" #loginForm="ngForm">
+              <fieldset>
+                <legend>Login</legend>
+                <label class="k-form-field">
+                  <span>First Name</span>
+                  <div class="validation-wrapper">
+                    <input class="k-textbox" placeholder="Your First Name" name="firstname" ngModel #firstname="ngModel" required />
+                  </div>
+                  <div class="validationError" *ngIf="!firstname.valid &&firstname.touched">
+                    please enter your First name
+                  </div>
+                </label>
+                <label class="k-form-field">
+                  <span>Last Name</span>
+                  <div class="validation-wrapper">
+                    <input class="k-textbox" value="Batista" placeholder="Your Last Name" name="lastname" ngModel #lastname="ngModel" required
+                    />
+                  </div>
+                  <div class="validationError" *ngIf="!lastname.valid &&lastname.touched">
+                    please enter your Last name
+                  </div>
+                </label>
+              </fieldset>
+              <div class="text-right">
+                <input type="submit" value="Login" class="k-button k-primary add" [disabled]="!loginForm.valid">
+              </div>
+            </form>
+            <!-- end login form -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- endlogin -->

@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@progress/kendo-theme-default/scss/all";
+// Start main color
+$primary:#ff6358;
+$secondary:#c1c1c1;
+$danger:#ad3d36;
+$light:#fff;
+$dark:#343a40;
+$green:#5cb85c;
+$light-gray:#5b5b5b;
+$dark-gray:#777;
+// End main color
+html, body {
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    
+  }
+  htmi{
+      overflow-x: hidden;
+  }
+.k-content, .k-window, .k-spreadsheet-filter-menu .k-spreadsheet-value-treeview-wrapper, .k-editor, .k-scheduler-agendaview tr.k-state-hover .k-scheduler-datecolumn, .k-notification {
+    color: #656565;
+    background-color: $secondary !important;
+    border-color: rgba(0, 0, 0, 0.08);
+}

@@ -1,0 +1,89 @@
+.side{
+    position:fixed;
+    width:20%;
+    top:63px;
+    bottom:0px;
+    left:0px;
+    
+}
+.nav-side{
+    position: relative;
+    height:100%;
+    width:100%;
+}
+.nav-dashboard{
+    position: absolute;
+    height:100%;
+    width:100%;
+    background-color:#c1c1c1;
+    color:#fff;
+    width:100%;
+    height:100%;
+    position:relative;
+    
+}
+
+.nav-dashboard h4{
+    padding-top:20px;
+    padding-bottom:20px;
+    text-align:center;
+    color:#5b5b5b;
+}
+.nav-dashboard  ul li{
+text-decoration: none;
+list-style: none;
+text-align:left;
+cursor: pointer;
+font-weight: bold;
+color:#777;
+}
+fieldset {
+    border-color: #fff !important;
+}
+form{
+    margin-top:40px;
+}
+.card{
+    margin-top:40px;
+}
+.k-button.k-primary {
+    padding: 5px 20px;
+    
+}
+.nav-pills .nav-link.active {
+    color: #fff;
+    background-color:#ff6358;
+}
+.nav-pills .nav-link {
+    border-radius: 0px;
+}
+a.nav-link{
+    color:#ff6358;
+}
+.validationError{
+    color:#ff6358;
+}
+.validation-wrapper {
+    position:relative;
+}
+.validation-wrapper i {
+    position: absolute;
+    right: 33px;
+    top: 8px;
+    color: #5cb85c;
+    font-size: 16px;
+}
+.k-form input, .k-form label:not(.k-checkbox-label):not(.k-radio-label), .k-form .k-widget:not(.k-calendar) {
+    display: block;
+    width: 100%;
+}
+.suc {
+    border:1px solid #5cb85c;
+    padding:6px;
+    text-align:center;
+    font-size:16px;
+    margin:15px auto;
+}
+kendo-grid{
+    margin-top:20px;
+}

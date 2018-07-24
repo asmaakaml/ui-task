@@ -1,0 +1,17 @@
+ .profile{
+    width:32%;
+}
+nav{
+    z-index:1;
+    width:100%;
+}
+.navbar-dark .navbar-brand {
+    color: #fff;
+    margin-right: 15%;
+    margin-left: 4%;
+    font-weight: bold;
+    font-size: 25px;
+}
+div.dropdown-menu.show{
+    z-index:999;
+}

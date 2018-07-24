@@ -1,0 +1,22 @@
+.login{
+    position:fixed;
+    height:100%;
+    width:100%;
+    top:0px;
+    bottom:0px;
+    background-color:#ad3d36;
+    z-index: 1;
+    .login-form{
+        margin-top:10%;
+    }
+}
+.validationError{
+    color:#ff6358 ;
+}
+.validation-wrapper {
+    position:relative;
+}
+.k-form input, .k-form label:not(.k-checkbox-label):not(.k-radio-label), .k-form .k-widget:not(.k-calendar) {
+    display: block;
+    width: 100%;
+}

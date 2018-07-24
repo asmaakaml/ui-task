@@ -1,0 +1,33 @@
+.nav-side{
+    position: relative;
+    height:100%;
+    width:100%;
+}
+.nav-dashboard{
+    position: absolute;
+    height:100%;
+    width:100%;
+    background-color:#c1c1c1;
+    color:#fff;
+    width:100%;
+    height:100%;
+    position:relative;
+    
+}
+.nav-dashboard h4{
+    padding-top:20px;
+    padding-bottom:20px;
+    text-align:center;
+    color:#5b5b5b;
+}
+.nav-dashboard  ul li{
+text-decoration: none;
+list-style: none;
+text-align:left;
+cursor: pointer;
+font-weight: bold;
+color:#343a40;
+}
+li>a{
+    color:#ff6358 ;
+}
