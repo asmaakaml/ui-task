@@ -50,7 +50,10 @@ export class NavigationComponent implements OnInit {
 
   public submit() {
     this.dataSaved = true;
-    this.close();
+    this.close1();
+    this.close2();
+    this.close3();
+    this.close3();
   }
   constructor() {
  

@@ -22,6 +22,6 @@ export class LoginComponent implements OnInit {
     console.log(this.lastname);
     this.router.navigate(['home']);
     this.auth.postUser(this.firstname, this.lastname);
-    // window.location.reload();
+     window.location.reload();
   }
 }
